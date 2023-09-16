@@ -5,16 +5,18 @@ const cors = require('cors');
 const morgan = require('morgan');
 const app = express()
 const path = require('path');
-const { sequelize } = require('./database');
+const { sequelize, conectarDB } = require('./database');
 require('ejs')
 
 //TODO CONEXION A BASE DE DATOS-al escribir sequelize hace automaticamente la importacion de
 //!const { sequelize } = require('./database');
-sequelize.authenticate()
-    .then(()=>console.log('Conexion exitosa'))
-    .catch((error)=>console.log(error))
+//!sequelize.authenticate() <- esto hace testing de conexion si es exitosa devuelve 1 + 1 
+// sequelize.authenticate()
+//     .then(()=>console.log('Conexion exitosa'))
+//     .catch((error)=>console.log(error))
 
-
+//!SEGUNDA FORMA DE CONECTAR
+conectarDB();
 
 //todo middleware
 //*asi se crea politicas de cors para crear listas blancas
