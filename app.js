@@ -4,8 +4,15 @@ const express = require('express')
 const cors = require('cors');
 const morgan = require('morgan');
 const app = express()
-const path = require('path')
+const path = require('path');
+const { sequelize } = require('./database');
 require('ejs')
+
+//TODO CONEXION A BASE DE DATOS-al escribir sequelize hace automaticamente la importacion de
+//!const { sequelize } = require('./database');
+sequelize.authenticate()
+    .then(()=>console.log('Conexion exitosa'))
+    .catch((error)=>console.log(error))
 
 
 
