@@ -4,6 +4,26 @@ const Publicacion = require('../models/Publicaciones')
 const router = Router()                 
 //!{ Router } <- extraemos la clase que hace el enrutamiento 
 
+
+const users = [
+  {
+    username:'CesarDev',
+    name: 'Cesar',
+    lastname:'Mereles'
+  },
+  {
+    username:'MariaDev',
+    name: 'Maria',
+    lastname:'Podkowa'
+  },
+  {
+    username:'IgnacioDev',
+    name: 'Ignacio',
+    lastname:'Mereles'
+  }
+]
+
+
 //todo rutas
 
 //todo servidor en escucha
