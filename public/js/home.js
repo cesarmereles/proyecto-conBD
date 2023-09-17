@@ -1,4 +1,4 @@
-
+import {obtenerPublicaciones,mostrarPublicaciones} from './crud-post.js'
 const btnUsers = document.querySelector('.btn-get-users');
 const btnPublicaciones = document.querySelector('.btn-get-publicaciones');
 
@@ -36,31 +36,13 @@ btnUsers.addEventListener('click', async () => {
 })
 
 //=========================================================================
-const mostrarPublicaciones = (publicacion, elemento) => {
-    let registros = '';
-    publicacion.forEach(user => {
-        registros += `
-            <tr>
-                <td>${user.id}</td>
-                <td>${user.titulo}</td>
-                <td>${user.detalle}</td>
-                <td>${user.url_imagen}</td>
-                <td>${user.fecha_publicacion}</td>
-            </tr>
-        `
-    });
-
-    elemento.innerHTML = registros
-}
-
-
 
 
 btnPublicaciones.addEventListener('click', async () => {
-    // Consulta al servidor por los datos de usuarios
-    const response = await fetch('/listado-de-publicaciones');
-    const publicacion = await response.json();
+    
     const tablaPublicaciones = document.querySelector('#tabla-publicaciones');
+    const publicacion = await obtenerPublicaciones()
+    
     // Modificar el DOM para mostrar los datos
     mostrarPublicaciones(publicacion, tablaPublicaciones)
 })
