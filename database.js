@@ -23,6 +23,6 @@ lo enviamos como objeto para poder asi realizar varias exportaciones
 module.exports = {
     conectarDB,
     sequelize,
-    DataTypes,
-    Sequelize
+    Sequelize,
+    DataTypes
 }
