@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const app = express()
 const path = require('path');
 const { sequelize, conectarDB } = require('./database');
+require('dotenv').config(); //antes de commit agregue esta linea
 require('ejs')
 
 //TODO CONEXION A BASE DE DATOS-al escribir sequelize hace automaticamente la importacion de
