@@ -19,9 +19,9 @@ const Publicacion = sequelize.define('Publicacion',{
         defaultValue:sequelize.literal('CURRENT_TIMESTAMP')
     }
 },{
-    createdAt:true,
-    updatedAt:true,
-    deletedAt:true,
+    // createdAt:true,
+    // updatedAt:true,
+    // deletedAt:true,
     tableName: 'publicaciones2'
 }); 
 
