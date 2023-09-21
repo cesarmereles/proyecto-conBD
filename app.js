@@ -1,18 +1,16 @@
-//todo logica de configuración del servidor
 //!importaciones de modulos
 const express = require('express')
 const cors = require('cors');
 const morgan = require('morgan');
-const app = express()
-const path = require('path');
-const { sequelize, conectarDB } = require('./database');
-require('dotenv').config(); //antes de commit agregue esta linea
+require('dotenv').config();
 require('ejs')
+const path = require('path');
 
-//TODO CONEXION A BASE DE DATOS-al escribir sequelize hace automaticamente la importacion de
-//!sequelize.authenticate() <- esto hace testing de conexion si es exitosa devuelve 1 + 1 
+const { sequelize, conectarDB } = require('./database');
 
-//!SEGUNDA FORMA DE CONECTAR
+const app = express()
+const port = process.env.PORT || 4000
+
 conectarDB();
 //*==================================================================================================================
                 //todo COMENTARIOS
@@ -43,4 +41,4 @@ app.use(require('./routes/blog-routes'))
 app.use(require('./routes/user-routes'))
 
 
-app.listen(3000,() => console.log(`Servidor corriendo en http://localhost:3000`))
+app.listen(port,() => console.log(`Servidor corriendo en http://localhost:${port}`))
