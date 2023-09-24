@@ -39,9 +39,8 @@ export const mostrarPublicaciones = (publicacion, elemento) => {
                     <h4>${pub.titulo}</h4>
                     <p>${pub.detalle}</p>
                     <p>${pub.fecha_publicacion}</p>
+                    <p>${pub.autor}</p>
                 </div>
-           
-           
             </section>
 
         `
@@ -50,10 +49,3 @@ export const mostrarPublicaciones = (publicacion, elemento) => {
     elemento.innerHTML = registros
 }
 
-{/* <tr>
-<td>${user.id}</td>
-<td>${user.titulo}</td>
-<td>${user.detalle}</td>
-<td>${user.url_imagen}</td>
-<td>${user.fecha_publicacion}</td>
-</tr> */}

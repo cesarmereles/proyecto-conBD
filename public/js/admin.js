@@ -11,6 +11,7 @@ nuevo_form.addEventListener('submit',async (e)=>{
         detalle: document.querySelector('#detalle').value,
         url_imagen: document.querySelector('#url_imagen').value,
         fecha: document.querySelector('#fecha_publicacion').value,
+        autor:document.querySelector('#autor').value
     }
     //tengo que pasar en forma de objeto
     const respuesta = await crearPublicaciones(data)

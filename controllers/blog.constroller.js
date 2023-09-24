@@ -4,12 +4,15 @@ const ctrol = {}
 
 
 ctrol.newPost = async (req, res)=> {
-    const {titulo,detalle,url_imagen,fecha_publicacion} = req.body;
+    //const {titulo,detalle,url_imagen,fecha_publicacion} = req.body;
     try {
       //!aca creamos la instancia del registro con el modelo de datos
-      const publicaciones2 = await Publicacion.create({
-        titulo,detalle,url_imagen,fecha_publicacion
-      })
+      //!agregamos un nuevo campo que es Autor
+      const publicaciones2 = await Publicacion.create(req.body)   
+      
+      // const publicaciones2 = await Publicacion.create({
+      //   titulo,detalle,url_imagen,fecha_publicacion
+      // })
       //!await publicaciones2.save() <- esto guarda la instancia que guardamos con sequelize
       await publicaciones2.save()
       res.send({msg:'Publicación creada con exito',publicaciones2})  
