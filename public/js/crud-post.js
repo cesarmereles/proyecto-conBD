@@ -1,11 +1,19 @@
-export const crearPublicaciones = () =>{
-
+export const crearPublicaciones = async (datos) =>{
+    const response= await fetch('/publicacion',{
+        method: 'POST',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify(datos)
+    })
+    const data = await response.json();
+    return data
 }
 
 
 export const obtenerPublicaciones = async () =>{
     // Consulta al servidor por los datos de usuarios
-    const response = await fetch('/listado-de-publicaciones');
+    const response = await fetch('/publicaciones');
     const publicacion = await response.json();
     return publicacion;
 }
@@ -23,17 +31,29 @@ export const eliminarPublicacion = (id)=>{
 //funcion para mostrar 
 export const mostrarPublicaciones = (publicacion, elemento) => {
     let registros = '';
-    publicacion.forEach(user => {
+    publicacion.forEach(pub => {
         registros += `
-            <tr>
-                <td>${user.id}</td>
-                <td>${user.titulo}</td>
-                <td>${user.detalle}</td>
-                <td>${user.url_imagen}</td>
-                <td>${user.fecha_publicacion}</td>
-            </tr>
+           <section class='d-flex gap-2'>
+                <img src="${pub.url_imagen}" class='rounded' height="200" width="200">
+                <div class='d-flex flex-column justify-content-between'>
+                    <h4>${pub.titulo}</h4>
+                    <p>${pub.detalle}</p>
+                    <p>${pub.fecha_publicacion}</p>
+                </div>
+           
+           
+            </section>
+
         `
     });
 
     elemento.innerHTML = registros
 }
+
+{/* <tr>
+<td>${user.id}</td>
+<td>${user.titulo}</td>
+<td>${user.detalle}</td>
+<td>${user.url_imagen}</td>
+<td>${user.fecha_publicacion}</td>
+</tr> */}

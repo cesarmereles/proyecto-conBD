@@ -4,7 +4,7 @@ const ctrol = {}
 
 
 ctrol.newPost = async (req, res)=> {
-    // const {titulo,detalle,url_imagen,fecha_publicacion} = req.body;
+    const {titulo,detalle,url_imagen,fecha_publicacion} = req.body;
     try {
       //!aca creamos la instancia del registro con el modelo de datos
       const publicaciones2 = await Publicacion.create({
