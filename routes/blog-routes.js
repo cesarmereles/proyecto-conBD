@@ -6,52 +6,40 @@ const router = Router()
 //!{ Router } <- extraemos la clase que hace el enrutamiento 
 
 
-// const users = [
-//   {
-//     username:'CesarDev',
-//     name: 'Cesar',
-//     lastname:'Mereles'
-//   },
-//   {
-//     username:'MariaDev',
-//     name: 'Maria',
-//     lastname:'Podkowa'
-//   },
-//   {
-//     username:'IgnacioDev',
-//     name: 'Ignacio',
-//     lastname:'Mereles'
-//   }
-// ]
-
-
 //todo rutas
 
 //============================================
 //  RUTAS PARA RENDERIZAR VISTAS 
 //============================================
 router.get('/', (req, res) => {
-  //res.render('home.ejs', {users})
-  // res.render('home.ejs')
   res.render('index')
-
 })
 router.get('/admin', (req, res) => {
   res.render('admin')
-
 })
+
+
 
 //============================================
 //  RUTAS PARA MANEJAR DATOS 
 //============================================
-
+//!CONSULTAR
 router.get('/publicaciones', getPosts)
 
+//!INSERTAR
 router.post('/publicacion', newPost)
 
+//!ACTUALIZAR
 router.put('/publicacion/:id', updatePosts)
+
+// Obtener una publicación
+//router.get('/api/publicacion/:id', obtenerPublicacion)
+
 
 router.delete('/publicacion/:id',deletePosts)
 
 //todo PARA PODER USAR ESTE MODULO TENGO QUE EXPORTAR LOS MODULOS DE RUTAS
 module.exports = router;
+
+//res.render('home.ejs', {users})
+  // res.render('home.ejs')

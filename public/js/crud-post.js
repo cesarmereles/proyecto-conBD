@@ -23,7 +23,7 @@ export const actualizarPublicacion = (id)=>{
 
 }
 export const eliminarPublicacion = (id)=>{
-
+    
 }
 
 

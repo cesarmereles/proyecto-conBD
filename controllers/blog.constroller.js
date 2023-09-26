@@ -37,6 +37,8 @@ ctrol.getPosts = async (req, res)=>{
     }
 }
 
+
+//TODO FUNCION PARA ACTUALIZAR
 ctrol.updatePosts = async (req, res)=>{
   const {id} = req.params
   try {

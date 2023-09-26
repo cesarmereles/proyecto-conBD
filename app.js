@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')))   //!express nos permite
 // const rutaBlog = require('./routes/blog-routes')
 // app.use(rutaBlog);
 app.use(require('./routes/blog-routes'))
-app.use(require('./routes/user-routes'))
+//app.use(require('./routes/user-routes'))
 
 
 app.listen(port,() => console.log(`Servidor corriendo en http://localhost:${port}`))
