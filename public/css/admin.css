@@ -5,6 +5,20 @@
 }
 
 body{
+    
     display: grid;
     grid-template-rows: auto auto 1fr auto ; 
+}
+
+.icono{
+    margin-right:5px;
+}
+
+#nuevo-form{
+    border: 1px solid black;
+    padding: 10px;
+}
+button{
+    margin-left: 200px; 
+    
 }

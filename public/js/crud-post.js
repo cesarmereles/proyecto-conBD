@@ -33,7 +33,7 @@ export const mostrarPublicaciones = (publicacion, elemento) => {
     let registros = '';
     publicacion.forEach(pub => {
         registros += `
-           <section class='d-flex gap-2'>
+           <section class='d-flex gap-2 cuadro'>
                 <img src="${pub.url_imagen}" class='rounded' height="200" width="200">
                 <div class='d-flex flex-column justify-content-between'>
                     <h4>${pub.titulo}</h4>
